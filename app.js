@@ -370,8 +370,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!peer) {
             const peerId = initPeer();
             
-            // Generate room link
-            const roomLink = window.location.href.split('?')[0] + '?room=' + peerId;
+            // Generate room link with the new website URL
+            const roomLink = 'https://neomatr.github.io/?room=' + peerId;
             roomLinkInput.value = roomLink;
             
             // Generate QR code

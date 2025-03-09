@@ -438,95 +438,77 @@ header p {
     margin-right: 8px;
 }
 
-/* Lobby styles */
-.lobby-controls {
+/* Color options */
+.color-options {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
 }
 
-.search-box {
-    flex: 1;
-    margin-right: 15px;
+.color-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.search-box input {
-    width: 100%;
-    padding: 10px 15px;
-    border: 1px solid var(--medium-gray);
-    border-radius: var(--border-radius);
-    font-size: 1rem;
+.color-option:hover {
+    transform: scale(1.1);
 }
 
-.sessions-list {
-    border: 1px solid var(--medium-gray);
-    border-radius: var(--border-radius);
-    max-height: 400px;
+.color-option.selected {
+    box-shadow: 0 0 0 3px var(--white), 0 0 0 5px var(--primary-color);
+}
+
+/* Connected users */
+.connected-users {
+    margin: 25px 0;
+}
+
+.connected-users h4 {
+    margin-bottom: 15px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.user-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-height: 200px;
     overflow-y: auto;
+    padding: 10px;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius);
 }
 
-.session-item {
+.user-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 15px;
-    border-bottom: 1px solid var(--medium-gray);
-    transition: background-color 0.3s ease;
+    width: 80px;
 }
 
-.session-item:last-child {
-    border-bottom: none;
-}
-
-.session-item:hover {
-    background-color: var(--light-gray);
-}
-
-.session-avatar {
+.user-avatar {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-right: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--white);
     font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.session-info {
-    flex: 1;
-}
-
-.session-name {
-    font-weight: 600;
     margin-bottom: 5px;
 }
 
-.session-details {
-    color: var(--dark-gray);
+.user-name {
     font-size: 0.9rem;
-}
-
-.join-session-btn {
-    padding: 8px 15px;
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.join-session-btn:hover {
-    background-color: var(--primary-dark);
-}
-
-.no-sessions {
     text-align: center;
-    padding: 30px;
-    color: var(--dark-gray);
+    word-break: break-word;
+    max-width: 100%;
 }
 
 /* Room info */
@@ -684,6 +666,14 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Logo styles */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
 /* Responsive design */
 @media (max-width: 1200px) {
     .ad-container {
@@ -723,100 +713,7 @@ footer {
         margin-top: 10px;
     }
     
-    .lobby-controls {
-        flex-direction: column;
-    }
-    
-    .search-box {
-        width: 100%;
-        margin-right: 0;
+    .logo {
         margin-bottom: 10px;
     }
-    
-    .session-item {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .session-avatar {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-    
-    .join-session-btn {
-        margin-top: 10px;
-    }
-}
-
-/* Color options */
-.color-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.color-option {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.color-option:hover {
-    transform: scale(1.1);
-}
-
-.color-option.selected {
-    box-shadow: 0 0 0 3px var(--white), 0 0 0 5px var(--primary-color);
-}
-
-/* Connected users */
-.connected-users {
-    margin: 25px 0;
-}
-
-.connected-users h4 {
-    margin-bottom: 15px;
-    text-align: center;
-    color: var(--primary-color);
-}
-
-.user-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    max-height: 200px;
-    overflow-y: auto;
-    padding: 10px;
-    border: 1px solid var(--medium-gray);
-    border-radius: var(--border-radius);
-}
-
-.user-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80px;
-}
-
-.user-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.user-name {
-    font-size: 0.9rem;
-    text-align: center;
-    word-break: break-word;
-    max-width: 100%;
 } 
